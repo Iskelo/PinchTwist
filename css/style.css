@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -358,8 +359,9 @@ img {
   text-shadow: 2px 2px 5px #333;
   color: var(--light);
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: 40px;
+  font-weight: 400;
+  font-size: 50px;
+  font-family: 'Fredoka One', cursive;
 }
 
 .main .showcase p {
@@ -373,6 +375,7 @@ img {
 
 .about {
   margin-top: 15px;
+  background-color: #ccc;
 }
 
 .about .columns {
@@ -389,6 +392,8 @@ img {
 }
 
 .about .columns .col-2 h1 {
+  font-family: 'Fredoka One', cursive;
+  margin-top: 10px;
   font-size: 30px;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -397,6 +402,23 @@ img {
 .about .columns .col-2 p {
   font-size: 16px;
   line-height: 1.3em;
+}
+
+.gallery__title {
+  width: 100%;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery__title h1 {
+  padding-top: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--dark);
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
 }
 
 .cards {
@@ -427,18 +449,18 @@ img {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 20px;
 }
 
 .cards .container .card {
   position: relative;
-  height: 400px;
+  height: 300px;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 45%;
+  width: 46%;
   margin-top: 30px;
+  margin-bottom: 20px;
   -webkit-box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
           box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
@@ -464,56 +486,42 @@ img {
   transition: 0.5s ease-in-out;
 }
 
-.cards .container .card .imgBox:hover {
+.cards .container .card .card__content h3 {
+  position: absolute;
+  right: 15px;
+  margin-top: 1em;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Fredoka One', cursive;
+  color: grey;
+}
+
+.cards .container .card .card__content p {
+  padding-top: 7em;
+  position: absolute;
+  right: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: end;
+  width: 200px;
+  line-height: 1.5;
+}
+
+.cards .container .card .card__content a {
+  position: absolute;
+  right: 15px;
+  bottom: 20%;
+}
+
+.cards .container .card:hover .imgBox {
   width: 250px;
   height: 250px;
   left: -50px;
   top: calc(50% - 125px);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-.cards .container .card .card__content h3 {
-  position: absolute;
-  right: 0;
-  margin-top: 30px;
-  font-size: 18px;
-  text-transform: uppercase;
-  width: calc(100% - 210px);
-  height: 100%;
-  padding-top: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.cards .container .card .card__content p {
-  position: absolute;
-  right: 0;
-  width: calc(100% - 210px);
-  height: 100%;
-  padding-top: 180px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: start;
-}
-
-.cards .container .card .card__content a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: start;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 /*.gallery{
@@ -568,6 +576,7 @@ img {
 }
 
 .contakt h1 {
+  font-family: 'Fredoka One', cursive;
   padding-top: 30px;
   font-size: 30px;
   color: var(--dark);
@@ -633,7 +642,25 @@ footer p {
     margin-bottom: 15px;
   }
   .about .columns .col-2 p {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .cards .container .card:hover .imgBox {
+    width: 180px;
+    height: 180px;
+    left: -10px;
+    top: calc(30% - 75px);
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  .cards .container .card {
+    width: 48%;
+  }
+  .cards .container .card .card__content h3 {
+    position: absolute;
+  }
+  .cards .container .card .card__content p {
+    font-size: 12px;
   }
 }
 
@@ -664,11 +691,37 @@ footer p {
     text-align: center;
   }
   .about .columns .col-2 h1 {
+    padding-top: 10px;
     font-size: 24px;
   }
   .about .columns .col-2 p {
     font-size: 14px;
     line-height: 1.5em;
+    padding-bottom: 10px;
+  }
+  .cards .container .card {
+    width: 100%;
+    height: 180px;
+  }
+  .cards .container .card .card__content h3 {
+    position: absolute;
+    margin-top: 0.5em;
+    font-size: 24px;
+  }
+  .cards .container .card .card__content p {
+    font-size: 12px;
+    padding-top: 4em;
+  }
+  .cards .container .card .card__content a {
+    bottom: 10%;
+  }
+  .cards .container .card:hover .imgBox {
+    width: 180px;
+    height: 180px;
+    left: 0px;
+    top: 0px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
   }
   /*.gallery {
 		.title h1{
@@ -722,6 +775,31 @@ footer p {
     font-size: 12px;
     line-height: 1.5em;
   }
+  .cards .container .card {
+    width: 100%;
+    height: 180px;
+  }
+  .cards .container .card .card__content h3 {
+    position: absolute;
+    margin-top: 0.5em;
+    font-size: 24px;
+  }
+  .cards .container .card .card__content p {
+    font-size: 12px;
+    padding-top: 4em;
+    width: 150px;
+  }
+  .cards .container .card .card__content a {
+    bottom: 10%;
+  }
+  .cards .container .card:hover .imgBox {
+    width: 180px;
+    height: 180px;
+    left: 0px;
+    top: 0px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
   /*.gallery {
 		margin-bottom: 20px;
 		.title h1{
@@ -762,5 +840,52 @@ footer p {
     font-size: 12px;
     line-height: 1.5em;
     margin-bottom: 20px;
+  }
+  .cards {
+    margin-bottom: 15px;
+  }
+  .cards .container .card {
+    position: relative;
+    margin: 15px auto 0 auto;
+    max-width: 200px;
+    height: 400px;
+  }
+  .cards .container .card .imgBox {
+    top: 0;
+    position: absolute;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .cards .container .card .card__content {
+    margin-top: 210px;
+    z-index: 2;
+  }
+  .cards .container .card .card__content h3 {
+    position: absolute;
+    font-size: 24px;
+    text-align: end;
+    width: 100%;
+  }
+  .cards .container .card .card__content p {
+    margin-top: 40px;
+    font-size: 12px;
+    padding-top: 0;
+    width: 150px;
+    text-align: end;
+  }
+  .cards .container .card .card__content a {
+    bottom: 5%;
+  }
+  .cards .container .card:hover .imgBox {
+    width: 200px;
+    height: 200px;
+    left: 0px;
+    top: 0px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
   }
 }
