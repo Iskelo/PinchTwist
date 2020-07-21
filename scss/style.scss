@@ -362,50 +362,90 @@ img{
 
 //<MENU BURGER>==================================================================================================
 
-.main{
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+	top: 50px;
+	max-width: 1920px;
+	position: relative;
+	margin: auto;
+	//height: ;
+}
+/* Caption text */
+.text {
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 80px;
+	width: 100%;
+	text-align: center;
 	
-	margin-top: 50px;
-	margin-bottom: 35px;
-	.showcase{		
-		min-width: 500px;
-		height: 100vh;		
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;		
-		padding: 3rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;		
-		background-image: url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-		h1{
-			margin-bottom: 15px;
-			text-shadow: 2px 2px 5px #333;
-			color: var(--light);
-			text-transform: uppercase;
-			font-weight: 400;
-			font-size: 50px;
-			
-			font-family: 'Fredoka One', cursive;
-		}
-		p{
-			margin-top: 15px;
-			text-shadow: 3px 3px 5px #333;
-			color: var(--light);
-			font-size: 20px;
-			text-align: center;
-			margin-bottom: 50px;
-			
-		}
+	color: var(--light);  
+	h1{
+		font-family: 'Fredoka One', cursive;
+		font-size: 50px;
+		margin-bottom: 40px;
+		text-shadow: 2px 2px 5px #333;
+	}
+	p{
+		margin-bottom: 100px;
+		text-shadow: 2px 2px 5px #333;
+		font-size: 20px;
 	}
 	
 
 }
 
+
+
+/* The dots/bullets/indicators */
+.dots{
+	position: relative;
+	bottom: 30px;
+	.dot {		
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;  
+		background-color: #fff;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+	.active {
+		background-color: var(--primary);
+	 }
+}
+
+
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
 //ABOUT======
 
 .about{
-	margin-top: 15px;
+	margin-top: 50px;
 	background-color:#ccc;
 	.columns{
 		display: grid;
@@ -422,8 +462,8 @@ img{
 				margin-bottom: 30px;
 			}
 			p{
-				font-size: 16px;
-				line-height: 1.3em;
+				font-size: 14px;
+				line-height: 1.5em;
 			}
 		}
 	}
@@ -433,8 +473,7 @@ img{
 
 .gallery__title{
 	width: 100%;
-	height: 50px;
-	
+	height: 50px;	
 	align-items: center;
 	h1{
 		padding-top: 20px;
@@ -535,49 +574,7 @@ img{
 
 
 
-/*.gallery{
-	padding-top: 30px;
-	margin-bottom: 30px;
-  
-	.title h1{
-		font-size: 30px;
-		color: var(--dark);		
-		text-transform: uppercase;
-		text-align: center;
-		padding-bottom: 30px;
-	}
-	.boxes{
-		display: grid;
-		grid-gap: 10px;
-		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-		.box{
-			background: var(--light);
-			text-align: center;
-			padding: 10px;
-			box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-			h3{
-				color: var(--dark);
-				margin-top: 20px;
-				margin-bottom: 10px;
-				font-size: 18px;
-				text-transform: uppercase;				
-			}
-			p{
-				color: var(--dark);
-				font-size: 14px;
-			}
-			a img{
-				
-				transition: .5s;
-			}
-			a img:hover{
-				
-				transform: scale(1.1);
-			}
-		}
 
-	}
-}*/
 
 //GALLERY END======
 
@@ -634,10 +631,32 @@ footer{
 //@Media========
 
 @media (max-width: $md2+px){
-	.main .showcase {
-		h1{font-size: 24px;}
-		p{margin-top: 10px; font-size: 16px;}
-		height: 300px;		
+	.slideshow-container{
+		.text{
+			bottom: 60px;
+			h1{
+				font-size: 30px;
+				margin-bottom: 20px;
+			}
+			p{
+				font-size: 16px;
+				margin-bottom: 50px;
+			}
+		}
+		.dots{
+			.dot{
+				height: 10px;
+				width: 10px;
+			}
+		}
+
+	}
+	.gallery__title{
+		height: 30px;
+		h1{
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
 	}
 	.about .columns .col-2{
 		h1{
@@ -681,6 +700,36 @@ footer{
 }
 
 @media(max-width: $md3+px){
+	.slideshow-container{
+		.text{
+			bottom: 40px;
+			h1{
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			p{
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+		}
+		.dots{
+			.dot{
+				height: 10px;
+				width: 10px;
+			}
+		}
+		.btn{
+			display: block;
+			text-align: center;
+		}
+	}
+	.gallery__title{
+		height: 30px;
+		h1{
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+	}
 	.main .showcase{
 		min-width: 200px;
 		display: block;
@@ -693,10 +742,7 @@ footer{
 			font-size: 14px;
 			line-height: 1.5em;
 		}
-		.btn{
-			display: block;
-			text-align: center;
-		}
+		
 	}
 	.about .columns{
 		display: block;
@@ -751,22 +797,6 @@ footer{
 		}
 	}
 
-	/*.gallery {
-		.title h1{
-			font-size: 24px;
-		}
-		.boxes{
-			grid-template-columns: repeat(2,1fr);
-			.box{
-				h3{
-					font-size: 16px;
-				}
-				p{
-					font-size: 12px;
-				}
-			}
-		}
-	}*/
 	.contakt{
 		h1{
 			padding-top: 25px;
@@ -850,24 +880,7 @@ footer{
 			}
 		}
 	}
-	/*.gallery {
-		margin-bottom: 20px;
-		.title h1{
-			font-size: 20px;
-		}
-		.boxes{
-			grid-template-columns:1fr;
-			.box{
-				h3{
-					font-size: 18px;
-				}
-				p{
-					font-size: 14px;
-					margin-bottom: 15px;
-				}
-			}
-		}
-	}*/
+
 	.contakt{
 		h1{
 			padding-top: 25px;
