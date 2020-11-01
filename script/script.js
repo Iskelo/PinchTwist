@@ -24,3 +24,20 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 5000); 
 }
+
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+ 
+  
+}
+
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+    document.getElementById('balloon').style.top = '83vh';     
+  } else{
+    document.getElementById('balloon').style.top = '-150px';
+  }
+}
